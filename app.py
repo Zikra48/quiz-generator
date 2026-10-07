@@ -93,6 +93,33 @@ CSS='''<style>
 .stApp{background:#f7f5f0;color:#182b3a}.block-container{max-width:1200px;padding-top:1.6rem}
 .studio-nav{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #dedfd8;padding-bottom:20px}.brand{font-size:12px;font-weight:800;letter-spacing:2px}.brand-icon{background:#182b3a;color:#fff;padding:7px 11px;border-radius:10px;font:24px Georgia}.nav-note{font-size:11px;color:#62716c;letter-spacing:1px}.hero{padding:38px 0 25px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;color:#a6472d}.hero h1{font:normal clamp(35px,5vw,57px)/1.07 Georgia,serif;letter-spacing:-2px;color:#182b3a;margin:13px 0}.hero h1 em{font-style:normal;color:#d94c27}.hero p{color:#61706e}.panel{border:1px solid #e0e2da;border-radius:20px;padding:20px;background:#fff}.panel-kicker{font-size:10px;color:#718074;font-weight:700;letter-spacing:2px}.panel h2{color:#182b3a}.question-card{padding:18px;border:1px solid #dfe3da;border-radius:16px;background:#fff;margin:0 0 14px}.question-card h3{font-size:16px}.result-hero{background:#172f34;color:#fff;border-radius:20px;padding:25px;margin:15px 0}.result-hero h2{color:#fff}.feedback{padding:18px;margin:12px 0;border:1px solid #dfe5d9;background:#fff;border-radius:15px}.correct{border-left:5px solid #438553}.incorrect{border-left:5px solid #c65d35}.explanation{background:#f3f5ef;padding:13px;border-radius:9px;margin-top:10px}.studio-footer{border-top:1px solid #dddfd5;margin-top:30px;padding-top:18px;color:#879084;font-size:10px}
 div.stButton>button[kind="primary"]{background:#d94c27;border-color:#d94c27}
+/* Force readable light controls even when the browser/Streamlit UI is in dark mode */
+.stApp, .stApp p, .stApp h1, .stApp h2, .stApp h3, .stApp label {color:#182b3a !important;}
+div[data-testid="stTextArea"] label p,
+div[data-testid="stSelectbox"] label p,
+div[data-testid="stSlider"] label p {color:#52616b !important;font-weight:600 !important;}
+div[data-testid="stTextArea"] textarea {
+  background:#ffffff !important;color:#182b3a !important;
+  border:1px solid #d9ddd6 !important;border-radius:10px !important;
+  caret-color:#d94c27 !important;
+}
+div[data-testid="stTextArea"] textarea::placeholder {color:#7d8985 !important;opacity:1 !important;}
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+  background:#ffffff !important;color:#182b3a !important;border-color:#d9ddd6 !important;
+}
+div[data-testid="stSelectbox"] div[data-baseweb="select"] * {color:#182b3a !important;}
+div[data-baseweb="popover"] {background:#ffffff !important;}
+div[data-baseweb="popover"] li, div[data-baseweb="popover"] div {color:#182b3a !important;}
+div[data-testid="stRadio"] {background:transparent !important;}
+div[data-testid="stRadio"] label {
+  background:#ffffff !important;border:1px solid #e1e5dc !important;
+  border-radius:10px !important;padding:10px 12px !important;margin:4px 0 !important;
+}
+div[data-testid="stRadio"] label:hover {background:#fff7f1 !important;border-color:#dca58f !important;}
+div[data-testid="stRadio"] label p, div[data-testid="stRadio"] label span {color:#344840 !important;opacity:1 !important;}
+div[data-testid="stRadio"] label:has(input:checked) {background:#fff1e8 !important;border-color:#d94c27 !important;}
+div[data-testid="stRadio"] input {accent-color:#d94c27 !important;}
+div[data-testid="stCaptionContainer"] p {color:#77817a !important;}
 </style>'''
 st.markdown(CSS,unsafe_allow_html=True)
 st.markdown('''<div class="studio-nav"><div class="brand"><span class="brand-icon">q</span>&nbsp; QUIZ STUDIO</div><span class="nav-note">A SMALL PRACTICE. A BIGGER PERSPECTIVE.</span></div><section class="hero"><span class="eyebrow">MADE FOR CURIOUS MINDS</span><h1>AI Quiz <em>Generator.</em></h1><p>Generate personalized quizzes on any topic using AI.</p></section>''',unsafe_allow_html=True)
